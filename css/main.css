@@ -1,0 +1,479 @@
+ /* =============  BASE STYLES  ==================*/
+ body * {
+     box-sizing: border-box;
+     font-family: 'Kanit', sans-serif;
+     font-size: large;
+
+ }
+
+ a, a:active {
+     text-decoration: none;
+     color: inherit;
+ }
+
+ body {
+     background: rgb(163, 157, 156)
+ }
+
+ h1 {
+     font-size: 1.2em;
+     color: rgb(34, 70, 37);
+ }
+
+ h2 {
+     font-size: 1.4em;
+ }
+
+ h4 {
+     font-size: 1.2em;
+ }
+
+ h5 {
+     font-size: 1.2em;
+
+     padding-top: 20px;
+     padding-bottom: 5px;
+ }
+
+ /* --------------- TEMPORARY STYLES -- start */
+
+ .color1, .color2, .color3, .color4, .color5 {
+     width: 70%;
+     height: 600px;
+     margin: 4% 15% 0 15%;
+ }
+
+ .color1 {
+     background: rgb(130, 143, 62);
+ }
+
+ .color2 {
+     background: rgb(81, 125, 63);
+ }
+
+ .color3 {
+     background: rgb(87, 133, 100);
+ }
+
+ .color4 {
+     background: rgb(37, 111, 122);
+ }
+
+ .color5 {
+     background: rgb(65, 75, 98);
+ }
+
+ /* optional title at top of display content  see color 4 and 5 */
+ .contentHeadingTitle {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background: rgb(241, 238, 233);
+     font-size: 1.7rem;
+     font-weight: 700;
+     word-spacing: 10px;
+     letter-spacing: 2.5px;
+     min-height: 2em;
+     height: auto;
+     margin-bottom: 10px;
+     color: rgb(1, 1, 1);
+ }
+
+ /* --- this is temporary -- end */
+
+
+
+ /* =============  HEADER ==================*/
+ header {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     height: 6vh;
+     position: fixed;
+     width: 100vw;
+     text-align: center;
+     z-index: 4;
+     line-height: 1.5em;
+     background: linear-gradient(360deg, rgb(202, 199, 199), rgba(243, 243, 243, 0.844));
+ }
+
+ /* home button */
+ nav.home {
+     color: rgb(2, 2, 2);
+     font-size: 10px;
+     box-shadow: 2px 2px 10px rgb(255, 255, 255);
+     padding: 0 15px;
+     height: 35px;
+     width: 130px
+ }
+
+
+
+
+ nav.home:hover {
+     background: rgb(202, 189, 155);
+     box-shadow: 2px 2px 10px rgb(255, 255, 255);
+ }
+
+ .infoLabel p:hover {
+     background: rgb(202, 189, 155);
+ }
+
+ /* ====================   INFO DROPDOWN IN TOP LEFT OF SCREEN  ================*/
+
+ /* ---------  DROPDOWN FUNCTIONALITY     -----------*/
+
+ input#boxCheck {
+     /* checkbox */
+     visibility: hidden;
+ }
+
+ input#boxCheck2 {
+     /* checkbox */
+     visibility: hidden;
+ }
+
+ .infoDropdown {
+     display: none;
+ }
+
+ /* INFO dropdown properties --- it is displayed with :hover below by default and with :checked on mobile query 1200px */
+ #infoDropdown {
+     position: absolute;
+     z-index: 3;
+     display: none;
+     flex-direction: column;
+     justify-content: space-around;
+     align-items: center;
+     top: 6vh;
+     left: 1vw;
+     height: 220px;
+     width: 70vw;
+     background-color: rgb(108, 103, 103);
+     color: rgb(7, 7, 6);
+
+ }
+
+ input#boxCheck:hover~#infoDropdown {
+     display: flex;
+ }
+
+
+ /* X to close previous ^^ description block for mobile only -hidden here until mobile query 1200px */
+
+ .XtoCloseContainer {
+     display: none;
+ }
+
+ /*------ info dropdown styles --------*/
+
+ .fa-play {
+     font-size: .8rem;
+     padding-right: 10px;
+ }
+
+ .infoLabelContain {
+     height: 35px;
+     box-shadow: 2px 2px 10px rgb(255, 255, 255);
+ }
+
+ .infoLabel p {
+     width: 130px
+ }
+
+
+
+ /*  --------- END of  INFO dropdown ----------=-------------- */
+
+
+ /* ====================== BEGIN 'DISPLAY DROPDOWN CONTENT' STYLES ================================= */
+
+ .fa-star {
+     color: orange;
+     font-size: .5em;
+ }
+
+ /* this is to help space the list items, it uses a hidden font-awesome star */
+ div .spacer-hide {
+     visibility: hidden;
+ }
+
+
+
+
+ /* -------------- END OF DROPDOWN STYLES ------------------------------- */
+
+ /* -------------- END OF  STYLES ------------------------------- */
+
+ /* =================================================================
+                  begin LAYOUT
+================================================================================ */
+ main, .kyu, .dropdown, .kyu h3, .displayDailySolutionContainer, ul.kyuNav, .kyuNav li {
+     display: flex;
+ }
+
+
+ /* ================= kyu navigation bar ======================================== */
+ /* this section can be deployed once there are lots of list items; 
+it is a NAV BAR FOR KYU SECTIONS, the style and layout is all here, but it might 
+need some work with where it navigates to (into center of kyu sections) */
+
+ ul.kyuNav {
+     flex-direction: row;
+     background: rgb(83, 72, 72);
+     height: 40px;
+     width: 20vw;
+     /* ---this 'top' matches the header height, if changed must change header height as well --- */
+     position: fixed;
+     top: 6vh;
+     z-index: 2;
+     justify-content: space-evenly;
+     align-items: center;
+     border-radius: 4px;
+ }
+
+ .kyuNav a {
+     text-decoration: none;
+     color: rgb(199, 149, 56);
+     background: none;
+     font-size: larger;
+ }
+
+ .kyuNav li {
+     border: 1px solid black;
+     flex-basis: 10%;
+     height: 80%;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .kyuNav li:hover {
+     background: rgb(206, 212, 172);
+ }
+
+
+ .comingSoon p {
+     margin: 20px auto;
+ }
+
+
+
+ /* ===============end of kyu navigation bar =================================== */
+ main {
+     color: rgb(30, 31, 30);
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     justify-content: space-between;
+
+
+ }
+
+ /* positioned to left side of screen */
+ .kyuVerticalContainer {
+     margin: 10.5vh 0 0 3vw;
+     flex-basis: 25vw;
+ }
+
+ section.kyu {
+     text-align: center;
+     margin: 15px auto;
+     background: rgb(241, 238, 233);
+     height: auto;
+     flex-direction: column;
+     align-items: center;
+     justify-content: flex-start;
+     position: relative;
+     z-index: 1;
+     scrollbar-width: 1px;
+     /* flex-basis: 18vw; */
+ }
+
+ .kyu h3 {
+     justify-content: center;
+     align-items: center;
+     margin-bottom: 10px;
+     height: 30px;
+     color: rgb(182, 181, 126);
+     background: rgb(119, 116, 112);
+     width: 25vw;
+ }
+
+
+ /* to remove margin from section top to match the display container*/
+ section.kyuVerticalContainer section:first-child {
+     margin-top: 0;
+ }
+
+ /* --------     content that displays for each item                                ---------
+-----------    JS makes it 'stick' when clicked    -------- */
+
+ .listItem {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     width: 20vw;
+     align-items: center;
+     position: relative;
+     height: 33px;
+     border-bottom: 1px solid rgb(90, 98, 90);
+     color: rgb(44, 35, 23);
+ }
+
+ /* values of width height and poition must match eachother for .displayOnPageLoad and .displayContent 
+displayOnPageLoad is optional; you can instead give the content you want to display a class of 'stick' in the HTML file*/
+ .displayOnPageLoad {
+     position: fixed;
+     top: 10.5vh;
+     right: 3vw;
+     z-index: 1;
+     background: rgb(198, 192, 184);
+     width: 65vw;
+     height: 100vh;
+ }
+
+ .displayContent {
+     display: none;
+     position: fixed;
+     /* if changing this top also change kyuVerticalContainer  and  displayOnPageLoad  TOP + RIGHT + width*/
+     top: 10.5vh;
+     right: 3vw;
+     z-index: 4;
+     background-color: rgb(198, 192, 184);
+     width: 65vw;
+     height: 100%;
+     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+     padding: 12px 16px;
+
+ }
+
+ .listItem.last {
+     border-bottom: none;
+     margin-bottom: 10px;
+ }
+
+ section.kyu:hover {
+     z-index: 6;
+ }
+
+ .listItem:hover {
+     background-color: rgba(161, 161, 149, 0.281);
+ }
+
+ .displayOnPageLoad h5, .displayOnPageLoad p {
+     color: #a73f0e;
+     margin: 5vh 10vw 0 10vw;
+     line-height: 2em;
+
+ }
+
+
+ .listItemSelectedColor {
+     background: rgb(202, 189, 155);
+ }
+
+ /* this hover selector is to override the .listItem on mousehover when Item is clicked
+   *** must match the listItemSelectedColor above! */
+ .listItemSelectedColor:hover {
+     background: rgb(202, 189, 155);
+ }
+
+
+
+ /* -----------      js uses 'stick' to make content 'stick' until next one is clicked */
+
+ .stick {
+     display: block;
+     z-index: 1;
+ }
+
+
+
+ @media screen and (max-width: 1200px) {
+
+
+     .XtoCloseContainer {
+         display: block;
+         right: 10px;
+         top: 15px;
+     }
+
+     .fa-rectangle-xmark {
+         font-size: 1.5em;
+         color: rgb(255, 82, 1);
+     }
+
+     input#boxCheck:checked~#infoDropdown {
+         display: none;
+     }
+
+
+ }
+
+ @media screen and (max-width: 1000px) {
+     * {
+         font-size: 2.2rem;
+     }
+
+     img {
+         width: 100%;
+     }
+
+     main {
+         margin: auto 0vw;
+     }
+
+     header {
+         height: 110px;
+     }
+
+     .listItem {
+
+         width: 15vw;
+         height: 50px;
+
+     }
+
+     h1, .infoLabel {
+         font-size: 1.4rem;
+     }
+
+     .home {
+         font-size: 35px;
+     }
+
+
+
+     .kyu h3 {
+         font-size: 1.4rem;
+         height: 60px;
+         display: flex;
+         align-items: center;
+     }
+
+     section.kyuVerticalContainer {
+         margin: 6vh 0;
+         flex-basis: 10vw;
+     }
+
+     section.kyu {
+         margin: 0px auto;
+     }
+
+     .displayOnPageLoad {
+         position: fixed;
+         top: 6vh;
+         right: 0vw;
+         width: 80vw;
+         height: 100%;
+     }
+
+     .displayContent {
+         position: fixed;
+         right: 0vw;
+         top: 6vh;
+         width: 80vw;
+         height: auto;
+         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+         padding: 12px 16px;
+         ;
+     }
+ }
